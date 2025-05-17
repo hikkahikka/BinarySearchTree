@@ -1,0 +1,71 @@
+# Игнорируем скомпилированные бинарные файлы
+*.exe
+*.out
+*.app
+*.o
+*.a
+*.so
+*.dll
+*.lib
+*.dylib
+
+# Игнорируем файлы сборки и кэша
+build/
+bin/
+obj/
+*.sln
+*.vcxproj*
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.manifest
+
+# Игнорируем временные и системные файлы
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Игнорируем файлы IDE (CLion, VS Code, Xcode и др.)
+.cache/
+.vscode/
+.idea/
+*.iml
+cmake-build-*/
+x64/
+x86/
+
+# Игнорируем лог-файлы и документацию
+*.log
+*.tmp
+*.bak
+*.pdf
+*.doc
+*.docx
+
+# Игнорируем зависимости (если они скачиваются автоматически)
+deps/
+third_party/
+external/
+
+# Игнорируем файлы CMake (если не храните их в репозитории)
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+# Visual Studio
+Debug/
+Release/
+ipch/
+*.aps
+*.ncb
+*.opt
+# Visual Studio temporary files
+.vs/
