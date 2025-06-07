@@ -9,7 +9,20 @@ int main()
 	 tree.AddNode(50);
 	 tree.AddNode(15);
 	 tree.AddNode(40);
-	
+	 tree.AddNode(60);
+	 tree.AddNode(70);
+	 tree.AddNode(5);
+     tree.AddNode(3);
+
+
+	 tree.AddNode(1);
+
+
+
+	 tree.HorizontalPrint();
+	 std::cout <<std::endl;
+	 tree.VerticalPrint();
+
 
 }
 

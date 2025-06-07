@@ -1,11 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-//#define VERT_STICK char(179)
-//#define HORIZ_STICK char(196) 
-//#define TOP_TO_RIGHT_STICK char (192)
-//#define BOTTOM_TO_RIGHT_STICK char (218)
-
+#include <queue>
+#include <vector>
+#include <cmath>
 struct Node {
 	Node* left;
 	Node* right;
@@ -17,13 +15,19 @@ class BST {
 public:
 	BST();
 	bool AddNode(int value);
-	void HorizontalPrint(Node* node, std::string prefix="", bool isLeft=true);
-
+	void HorizontalPrint();
+	bool ContainsNode(int value);
+	bool DeleteNode(int value);
+	void DeleteTree();
+	void VerticalPrint();
 private:
 	Node* root;
-	Node* AddNodeImpl(Node* node, int value);
+	Node* AddNode(Node* node, int value);
 	bool ContainsNode(Node* node, int value);
 	Node* FindMin(Node* node);
 	Node* DeleteNode(Node* node, int value);
 	void DeleteTree(Node* node);
+	void HorizontalPrint(Node* node, std::string prefix = "", bool isLeft = true);
+	void VerticalPrint(Node* root);
+
 };
