@@ -1,9 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <queue>
-#include <vector>
-#include <cmath>
+
 #include <fstream>
 struct Node {
 	Node* left;
@@ -15,12 +13,11 @@ struct Node {
 class BST {
 public:
 	BST();
+	Node* GetRoot();
 	bool AddNode(int value);
-	void HorizontalPrint();
 	bool ContainsNode(int value);
 	bool DeleteNode(int value);
 	void DeleteTree();
-	void VerticalPrint();
 	void DeserializeTree(std::string path);
 
 private:
@@ -30,8 +27,6 @@ private:
 	Node* FindMin(Node* node);
 	Node* DeleteNode(Node* node, int value);
 	void DeleteTree(Node* node);
-	void HorizontalPrint(Node* node, std::string prefix = "", bool isLeft = true);
-	void VerticalPrint(Node* root);
 	Node* DeserializeTree(Node* root, std::string path);
 
 };
