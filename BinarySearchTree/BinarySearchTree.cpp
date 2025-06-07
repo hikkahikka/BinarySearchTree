@@ -39,6 +39,7 @@ Node* BST::FindMin(Node* node) {
 	}
 	return node;
 }
+
 Node* BST::DeleteNode(Node* node, int value) { 
 	if (node == nullptr) return nullptr;
 		
@@ -83,6 +84,7 @@ void BST::DeleteTree(Node* node) {
 void BST::DeleteTree() {
 	DeleteTree(root);
 }
+
 void BST::HorizontalPrint(Node* node, std::string prefix, bool isLeft ) {
 	std::string top_right = std::string(1, char(192)) + std::string(2, char(196)) + " ";
 	std::string vert = std::string(1, char(179));
@@ -110,7 +112,7 @@ void BST::VerticalPrint(Node* root) {
 	if (!root) return;
 	std::queue<Node*> q;
 	q.push(root);
-	int level = 0; 
+	int level = 0;
 	int maxLevel = 0;
 	std::queue<Node*> tempQ;
 	tempQ.push(root);
@@ -125,7 +127,7 @@ void BST::VerticalPrint(Node* root) {
 		}
 	}
 	while (!q.empty()) {
-		int size = q.size(); 
+		int size = q.size();
 		int spaces = std::pow(2, maxLevel - level) - 1;
 		for (int i = 0; i < spaces; ++i) {
 			std::cout << " ";
@@ -166,8 +168,26 @@ void BST::VerticalPrint(Node* root) {
 		if (allNull) break;
 	}
 }
+
 void BST::VerticalPrint() {
 	VerticalPrint(root);
+}
+
+Node* BST::DeserializeTree(Node* root, std::string path) {
+	std::string value;
+	std::ifstream fin(path);
+	if (fin.is_open())
+	{
+		while (fin >> value) {
+			root = AddNode(root, std::stoi(value));
+		}
+	}
+	fin.close();
+	return root;
+}
+
+void BST::DeserializeTree(std::string path) {
+	root = DeserializeTree(root, path);
 }
 BST::BST() {
 	root = nullptr;

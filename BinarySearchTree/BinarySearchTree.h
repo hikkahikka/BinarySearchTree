@@ -4,6 +4,7 @@
 #include <queue>
 #include <vector>
 #include <cmath>
+#include <fstream>
 struct Node {
 	Node* left;
 	Node* right;
@@ -20,6 +21,8 @@ public:
 	bool DeleteNode(int value);
 	void DeleteTree();
 	void VerticalPrint();
+	void DeserializeTree(std::string path);
+
 private:
 	Node* root;
 	Node* AddNode(Node* node, int value);
@@ -29,5 +32,6 @@ private:
 	void DeleteTree(Node* node);
 	void HorizontalPrint(Node* node, std::string prefix = "", bool isLeft = true);
 	void VerticalPrint(Node* root);
+	Node* DeserializeTree(Node* root, std::string path);
 
 };
