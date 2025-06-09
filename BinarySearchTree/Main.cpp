@@ -27,9 +27,9 @@ int main()
 	tree.AddNode(9);
 	tree.AddNode(10);
 	BSTPrinter printer;
-	printer.HorizontalPrint(&tree);
+	printer.HorizontalPrint(tree);
 	tree.BuildBalancedTree();
-	printer.HorizontalPrint(&tree);
+	printer.HorizontalPrint(tree);
 	
 }
 

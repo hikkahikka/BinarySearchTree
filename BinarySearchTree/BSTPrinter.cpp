@@ -15,16 +15,16 @@ void BSTPrinter::HorizontalPrint(Node* node, std::string prefix, bool isLeft) {
 	}
 }
 
-void BSTPrinter::HorizontalPrint(BST* tree) {
-	Node* root = tree->GetRoot();
+void BSTPrinter::HorizontalPrint(BST& tree) {
+	Node* root = tree.GetRoot();
 	if (root == nullptr) {
 		std::cout << "Tree is empty!"<<std::endl;
 		return;
 	}
 	HorizontalPrint(root);
 }
-void BSTPrinter::VerticalPrint(BST* tree) {
-	Node* root = tree->GetRoot();
+void BSTPrinter::VerticalPrint(BST& tree) {
+	Node* root = tree.GetRoot();
 	if (!root) {
 		std::cout << "Tree is empty!" << std::endl;
 		return;

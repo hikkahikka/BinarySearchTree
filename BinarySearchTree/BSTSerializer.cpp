@@ -1,11 +1,11 @@
 #include "BSTSerializer.h"
-bool BSTSerializer::DeserializeTree(BST* tree, std::string path) {
+bool BSTSerializer::DeserializeTree(BST& tree, std::string path) {
 	std::string value;
 	std::ifstream fin(path);
 	if (fin.is_open())
 	{
 		while (fin >> value) {
-			tree->AddNode(std::stoi(value));
+			tree.AddNode(std::stoi(value));
 		}
 		fin.close();
 		return true;
@@ -14,10 +14,10 @@ bool BSTSerializer::DeserializeTree(BST* tree, std::string path) {
 	return false;
 	
 }
-bool BSTSerializer::SerializeTree(BST* tree, std::string path) {
+bool BSTSerializer::SerializeTree(BST& tree, std::string path) {
 	std::ofstream fout(path);
 	if (fout.is_open()) {
-		SerializeTree(tree->GetRoot(), fout);
+		SerializeTree(tree.GetRoot(), fout);
 		fout.close();
 		return true;
 	}
