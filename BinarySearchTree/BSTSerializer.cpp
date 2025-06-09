@@ -10,7 +10,7 @@ bool BSTSerializer::DeserializeTree(BST* tree, std::string path) {
 		fin.close();
 		return true;
 	}
-	std::cout << "File is not open!";
+	std::cout << "File is not open!" << std::endl;
 	return false;
 	
 }
@@ -21,7 +21,7 @@ bool BSTSerializer::SerializeTree(BST* tree, std::string path) {
 		fout.close();
 		return true;
 	}
-	std::cout << "File is not open!";
+	std::cout << "File is not open!" << std::endl;
 	return false;
 }
 
