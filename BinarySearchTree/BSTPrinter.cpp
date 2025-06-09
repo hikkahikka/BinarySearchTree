@@ -25,7 +25,11 @@ void BSTPrinter::HorizontalPrint() {
 	HorizontalPrint(root);
 }
 void BSTPrinter::VerticalPrint(Node* root) {
-	if (!root) return;
+	if (!root) {
+		std::cout << "Tree is empty!";
+		return;
+	}
+
 	std::queue<Node*> q;
 	q.push(root);
 	int level = 0;

@@ -91,21 +91,6 @@ void BST::DeleteTree() {
 	DeleteTree(root);
 }
 
-Node* BST::DeserializeTree(Node* root, std::string path) {
-	std::string value;
-	std::ifstream fin(path);
-	if (fin.is_open())
-	{
-		while (fin >> value) {
-			root = AddNode(root, std::stoi(value));
-		}
-	}
-	fin.close();
-	return root;
-}
 
-void BST::DeserializeTree(std::string path) {
-	root = DeserializeTree(root, path);
-}
 
 

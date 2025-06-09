@@ -1,8 +1,4 @@
 #pragma once
-#include <iostream>
-#include <string>
-
-#include <fstream>
 struct Node {
 	Node* left;
 	Node* right;
@@ -18,7 +14,7 @@ public:
 	bool ContainsNode(int value);
 	bool DeleteNode(int value);
 	void DeleteTree();
-	void DeserializeTree(std::string path);
+	
 
 private:
 	Node* root;
@@ -27,6 +23,5 @@ private:
 	Node* FindMin(Node* node);
 	Node* DeleteNode(Node* node, int value);
 	void DeleteTree(Node* node);
-	Node* DeserializeTree(Node* root, std::string path);
 
 };
