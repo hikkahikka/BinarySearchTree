@@ -8,12 +8,9 @@
 
 class BSTPrinter {
 public:
-	BSTPrinter(Node* _root);
-	void HorizontalPrint();
-	void VerticalPrint();
-
+	void HorizontalPrint(BST* tree);
+	void VerticalPrint(BST* tree);
 private:
-	Node* root;
 	void HorizontalPrint(Node* node, std::string prefix = "", bool isLeft = true);
-	void VerticalPrint(Node* root);
+	
 };

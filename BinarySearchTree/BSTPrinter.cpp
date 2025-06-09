@@ -1,7 +1,5 @@
 #include "BSTPrinter.h"
-BSTPrinter::BSTPrinter(Node* _root) {
-	root = _root;
-}
+
 void BSTPrinter::HorizontalPrint(Node* node, std::string prefix, bool isLeft) {
 	std::string top_right = std::string(1, char(192)) + std::string(2, char(196)) + " ";
 	std::string vert = std::string(1, char(179));
@@ -17,14 +15,16 @@ void BSTPrinter::HorizontalPrint(Node* node, std::string prefix, bool isLeft) {
 	}
 }
 
-void BSTPrinter::HorizontalPrint() {
+void BSTPrinter::HorizontalPrint(BST* tree) {
+	Node* root = tree->GetRoot();
 	if (root == nullptr) {
 		std::cout << "Tree is empty!";
 		return;
 	}
 	HorizontalPrint(root);
 }
-void BSTPrinter::VerticalPrint(Node* root) {
+void BSTPrinter::VerticalPrint(BST* tree) {
+	Node* root = tree->GetRoot();
 	if (!root) {
 		std::cout << "Tree is empty!";
 		return;
@@ -87,8 +87,4 @@ void BSTPrinter::VerticalPrint(Node* root) {
 		}
 		if (allNull) break;
 	}
-}
-
-void BSTPrinter::VerticalPrint() {
-	VerticalPrint(root);
 }
