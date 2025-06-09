@@ -91,6 +91,26 @@ void BST::DeleteTree() {
 	DeleteTree(root);
 }
 
+void BST::GetSortedVector(Node* node, std::vector<Node*>& nodes) {
+	if (node == nullptr) return;
+
+	GetSortedVector(node->left, nodes);
+	nodes.push_back(node);
+	GetSortedVector(node->right, nodes);
+}
 
 
+Node* BST::BuildBalancedTree(std::vector<Node*>& nodes, int start, int end) {
+	if (start > end) return nullptr;
+	int mid = (start + end) / 2;
+	Node* node = nodes[mid];
+	node->left = BuildBalancedTree(nodes, start, mid - 1);
+	node->right = BuildBalancedTree(nodes, mid + 1, end);
+	return node;
+}
 
+void BST::BuildBalancedTree() {
+	std::vector<Node*> nodes;
+	GetSortedVector(root, nodes);
+	root = BuildBalancedTree(nodes, 0, nodes.size() - 1);
+}
