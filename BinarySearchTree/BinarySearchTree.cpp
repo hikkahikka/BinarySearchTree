@@ -81,14 +81,15 @@ bool BST::DeleteNode(int value) {
 }
 
 void BST::DeleteTree(Node* node) {
-	if (root == nullptr) return;  
-	DeleteTree(root->left);   
-	DeleteTree(root->right); 
-	delete root;
+	if (node == nullptr) return;
+	DeleteTree(node->left);
+	DeleteTree(node->right);
+	delete node;
 }
 
 void BST::DeleteTree() {
 	DeleteTree(root);
+	root = nullptr;
 }
 
 void BST::GetSortedVector(Node* node, std::vector<Node*>& nodes) {

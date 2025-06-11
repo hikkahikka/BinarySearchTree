@@ -9,9 +9,9 @@ int main()
 	BST tree;
 	BSTPrinter printer;
 	BSTGenerator generator;
-	generator.GenerateTree(tree, 5, 1, 15);
+	generator.GenerateTree(tree, 10);
 	printer.HorizontalPrint(tree);
-	tree.BuildBalancedTree();
+	generator.GenerateTree(tree, 10);
 	printer.HorizontalPrint(tree);
 	
 }

@@ -1,5 +1,6 @@
 #include "BSTGenerator.h"
 void BSTGenerator::GenerateTree(BST& tree, int n, int start, int finish) {
+	tree.DeleteTree();
 	int value;
 	for (int i = 0; i< n; i++) {
 		value = rand() % (finish - start + 1);
@@ -15,4 +16,8 @@ void BSTGenerator::GenerateTree(BST& tree, int n, int start, int finish) {
 
 void BSTGenerator::GenerateTree(BST& tree, int n) {
 	GenerateTree(tree, n, 0, 100);
+}
+
+void BSTGenerator::GenerateNodes(BST& tree, int n, int start, int finish) {
+
 }
