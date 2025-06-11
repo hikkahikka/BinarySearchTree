@@ -11,7 +11,7 @@ int main()
 	BSTGenerator generator;
 	generator.GenerateTree(tree, 10);
 	printer.HorizontalPrint(tree);
-	generator.GenerateTree(tree, 10);
+	generator.GenerateNodes(tree, 2);
 	printer.HorizontalPrint(tree);
 	
 }
