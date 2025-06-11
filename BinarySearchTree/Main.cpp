@@ -13,6 +13,10 @@ int main()
 	printer.HorizontalPrint(tree);
 	generator.GenerateNodes(tree, 2);
 	printer.HorizontalPrint(tree);
+	std::cout << tree.IsEmpty()<<std::endl;
+	tree.DeleteTree();
+	std::cout << tree.IsEmpty();
+
 	
 }
 

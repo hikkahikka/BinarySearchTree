@@ -115,3 +115,7 @@ void BST::BuildBalancedTree() {
 	GetSortedVector(root, nodes);
 	root = BuildBalancedTree(nodes, 0, nodes.size() - 1);
 }
+
+bool BST::IsEmpty() {
+	return root == nullptr;
+}

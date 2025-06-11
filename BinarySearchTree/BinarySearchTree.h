@@ -16,6 +16,7 @@ public:
 	bool DeleteNode(int value);
 	void DeleteTree();
 	void BuildBalancedTree();
+	bool IsEmpty();
 
 private:
 	Node* root;
@@ -26,4 +27,5 @@ private:
 	void DeleteTree(Node* node);
 	void GetSortedVector(Node* node, std::vector<Node*>& nodes);
 	Node* BuildBalancedTree(std::vector<Node*>& nodes, int start, int end);
+
 };
