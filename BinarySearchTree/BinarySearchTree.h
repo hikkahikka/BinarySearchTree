@@ -16,7 +16,7 @@ public:
 	bool DeleteNode(int value);
 	void DeleteTree();
 	void BuildBalancedTree();
-	bool IsEmpty();
+	//bool IsEmpty();
 
 private:
 	Node* root;

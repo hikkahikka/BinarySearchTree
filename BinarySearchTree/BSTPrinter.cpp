@@ -17,6 +17,7 @@ void BSTPrinter::HorizontalPrint(Node* node, std::string prefix, bool isLeft) {
 
 void BSTPrinter::HorizontalPrint(BST& tree) {
 	Node* root = tree.GetRoot();
+	std::cout << "\n";
 	if (root == nullptr) {
 		std::cout << "Tree is empty!"<<std::endl;
 		return;
@@ -29,7 +30,7 @@ void BSTPrinter::VerticalPrint(BST& tree) {
 		std::cout << "Tree is empty!" << std::endl;
 		return;
 	}
-
+	std::cout << "\n";
 	std::queue<Node*> q;
 	q.push(root);
 	int level = 0;
@@ -59,7 +60,7 @@ void BSTPrinter::VerticalPrint(BST& tree) {
 				std::cout << current->value;
 			}
 			else {
-				std::cout << "  ";
+				std::cout << " ";
 			}
 			for (int j = 0; j < 2 * spaces + 1; ++j) {
 				std::cout << " ";

@@ -116,6 +116,6 @@ void BST::BuildBalancedTree() {
 	root = BuildBalancedTree(nodes, 0, nodes.size() - 1);
 }
 
-bool BST::IsEmpty() {
-	return root == nullptr;
-}
+//bool BST::IsEmpty() {
+//	return root == nullptr;
+//}
