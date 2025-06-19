@@ -29,6 +29,7 @@ bool UserInterface::Start(BST& tree) {
 	}
 	case 3: {
 		tree.DeleteTree();
+		std::cout << "The tree has been removed successfully!" << std::endl;
 		break;
 	}
 	case 4: {
@@ -89,8 +90,12 @@ void UserInterface::AddNode(BST& tree) {
 		if (!tree.AddNode(value)) {
 			std::cout << "The tree cannot contain duplicate elements." << std::endl;
 		}
-		else return;
+		else {
+			std::cout << "The item has been added successfully!" << std::endl;
+			return;
+		}
 	}
+
 
 }
 
@@ -100,6 +105,10 @@ void UserInterface::DeleteNode(BST& tree) {
 	int value = InputValue(INT_MIN, INT_MAX);
 	if (!tree.DeleteNode(value)) {
 		std::cout << "There is no such element in the tree." << std::endl;
+	}
+	else {
+		std::cout << "The item has been removed successfully!" << std::endl;
+
 	}
 	
 }
@@ -155,7 +164,8 @@ void UserInterface::GenerateTree(BST& tree) {
 			<< b - a + 1 << " elements from " << a << " to " << b<<std::endl;
 	}
 	generator.GenerateTree(tree, n, a, b);
-	
+	std::cout << "The tree has been generated successfully!" << std::endl;
+
 }
 
 void UserInterface::GenerateNodes(BST& tree) {
@@ -172,5 +182,6 @@ void UserInterface::GenerateNodes(BST& tree) {
 			<< b - a + 1 << " elements from " << a << " to " << b << std::endl;
 	}
 	generator.GenerateNodes(tree, n, a, b);
+	std::cout << "The nodes has been generated successfully!" << std::endl;
 
 }

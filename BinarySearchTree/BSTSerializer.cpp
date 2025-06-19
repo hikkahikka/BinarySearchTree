@@ -4,6 +4,7 @@ bool BSTSerializer::DeserializeTree(BST& tree, std::string path) {
 	std::ifstream fin(path);
 	if (fin.is_open())
 	{
+		tree.DeleteTree();
 		while (fin >> value) {
 			try {
 				tree.AddNode(std::stoi(value));
@@ -16,6 +17,7 @@ bool BSTSerializer::DeserializeTree(BST& tree, std::string path) {
 			}
 		}
 		fin.close();
+		std::cout << "The tree has been deserialized successfully!" << std::endl;
 		return true;
 	}
 	std::cout << "File is not open!" << std::endl;
@@ -27,6 +29,7 @@ bool BSTSerializer::SerializeTree(BST& tree, std::string path) {
 	if (fout.is_open()) {
 		SerializeTree(tree.GetRoot(), fout);
 		fout.close();
+		std::cout << "The tree has been serialized successfully!" << std::endl;
 		return true;
 	}
 	std::cout << "File is not open!" << std::endl;
