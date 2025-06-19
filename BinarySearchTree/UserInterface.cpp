@@ -1,6 +1,6 @@
 #include "UserInterface.h"
 bool UserInterface::Start(BST& tree) {
-	std::cout <<"Select an item from the menu:\n "
+	std::cout <<"Select an item from the menu:\n"
 		"0) Exit\n"
 		"1) Add an element to the tree\n"
 		"2) Remove an element from the tree\n"

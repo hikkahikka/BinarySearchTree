@@ -5,7 +5,15 @@ bool BSTSerializer::DeserializeTree(BST& tree, std::string path) {
 	if (fin.is_open())
 	{
 		while (fin >> value) {
-			tree.AddNode(std::stoi(value));
+			try {
+				tree.AddNode(std::stoi(value));
+			}
+			catch (const std::invalid_argument&) {
+				continue;
+			}
+			catch (const std::out_of_range&) {
+				continue;
+			}
 		}
 		fin.close();
 		return true;
