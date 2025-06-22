@@ -5,7 +5,6 @@ Node* BST::GetRoot() {
 BST::BST() {
 	root = nullptr;
 }
-
 Node* BST::AddNode(Node* node, int value) {
 	if (node == nullptr) return new Node(value);
 	if (value < node->value) {
@@ -16,7 +15,6 @@ Node* BST::AddNode(Node* node, int value) {
 	}
 	return node;
 }
-
 bool BST::AddNode(int value) {
 	if (!ContainsNode(root, value)) {
 		root = AddNode(root, value);
@@ -24,7 +22,6 @@ bool BST::AddNode(int value) {
 	}
 	return false;
 }
-
 bool BST::ContainsNode(Node* node, int value) {
 	if (node == nullptr) return false;
 	if (node->value == value) return true;
@@ -35,7 +32,6 @@ bool BST::ContainsNode(Node* node, int value) {
 		return ContainsNode(node->right, value);
 	}
 }
-
 bool BST::ContainsNode(int value) {
 	return ContainsNode(root, value);
 }
@@ -45,7 +41,6 @@ Node* BST::FindMin(Node* node) {
 	}
 	return node;
 }
-
 Node* BST::DeleteNode(Node* node, int value) { 
 	if (node == nullptr) return nullptr;
 		
@@ -73,25 +68,21 @@ Node* BST::DeleteNode(Node* node, int value) {
 	}
 	return node;
 }
-
 bool BST::DeleteNode(int value) {
 	if (!ContainsNode(root, value))return false;
 	root = DeleteNode(root, value);
 	return true;
 }
-
 void BST::DeleteTree(Node* node) {
 	if (node == nullptr) return;
 	DeleteTree(node->left);
 	DeleteTree(node->right);
 	delete node;
 }
-
 void BST::DeleteTree() {
 	DeleteTree(root);
 	root = nullptr;
 }
-
 void BST::GetSortedVector(Node* node, std::vector<Node*>& nodes) {
 	if (node == nullptr) return;
 
@@ -99,8 +90,6 @@ void BST::GetSortedVector(Node* node, std::vector<Node*>& nodes) {
 	nodes.push_back(node);
 	GetSortedVector(node->right, nodes);
 }
-
-
 Node* BST::BuildBalancedTree(std::vector<Node*>& nodes, int start, int end) {
 	if (start > end) return nullptr;
 	int mid = (start + end) / 2;
@@ -109,13 +98,8 @@ Node* BST::BuildBalancedTree(std::vector<Node*>& nodes, int start, int end) {
 	node->right = BuildBalancedTree(nodes, mid + 1, end);
 	return node;
 }
-
 void BST::BuildBalancedTree() {
 	std::vector<Node*> nodes;
 	GetSortedVector(root, nodes);
 	root = BuildBalancedTree(nodes, 0, nodes.size() - 1);
 }
-
-//bool BST::IsEmpty() {
-//	return root == nullptr;
-//}

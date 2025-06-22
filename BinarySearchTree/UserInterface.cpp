@@ -64,6 +64,8 @@ bool UserInterface::Start(BST& tree) {
 	}
 	case 11: {
 		tree.BuildBalancedTree();
+		std::cout << "The tree has been balanced successfully!" << std::endl;
+
 	}
 	}
 	return true;
